@@ -4,13 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".GameActivity"
-    android:background="@android:color/holo_green_dark">
+    android:background="@drawable/background">
 
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/playerCharacter"
+        android:id="@+id/playerPortrait"
         android:src="@drawable/character"
         android:layout_centerVertical="true"
         android:layout_alignParentStart="true" />
@@ -18,7 +18,7 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/enemyCharacter"
+        android:id="@+id/enemyPortrait"
         android:src="@drawable/character"
         android:layout_centerVertical="true"
         android:layout_alignParentEnd="true" />
@@ -28,87 +28,87 @@
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:id="@+id/playerRadio"
-        android:layout_toEndOf="@+id/playerCharacter">
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="playerRadio"
-        android:text="Head"
-        android:id="@+id/playerHead"
-        android:layout_alignTop="@+id/playerCharacter"
-        android:layout_toEndOf="@+id/playerCharacter"
-        android:checked="true" />
+        android:layout_toEndOf="@+id/playerPortrait">
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="defenceRadio"
+            android:text="Head"
+            android:id="@+id/playerHead"
+            android:layout_alignTop="@+id/playerCharacter"
+            android:layout_toEndOf="@+id/playerCharacter"
+            android:checked="true" />
 
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Arms"
-        android:onClick="playerRadio"
-        android:id="@+id/playerArms"
-        android:layout_below="@+id/playerHead"
-        android:layout_toEndOf="@+id/playerCharacter" />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Arms"
+            android:onClick="defenceRadio"
+            android:id="@+id/playerArms"
+            android:layout_below="@+id/playerHead"
+            android:layout_toEndOf="@+id/playerCharacter" />
 
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Chest"
-        android:id="@+id/playerChest"
-        android:onClick="playerRadio"
-        android:layout_below="@+id/playerArms"
-        android:layout_toEndOf="@+id/playerCharacter" />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chest"
+            android:id="@+id/playerChest"
+            android:onClick="defenceRadio"
+            android:layout_below="@+id/playerArms"
+            android:layout_toEndOf="@+id/playerCharacter" />
 
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Legs"
-        android:id="@+id/playerLegs"
-        android:onClick="playerRadio"
-        android:layout_below="@+id/playerChest"
-        android:layout_toEndOf="@+id/playerCharacter" />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Legs"
+            android:id="@+id/playerLegs"
+            android:onClick="defenceRadio"
+            android:layout_below="@+id/playerChest"
+            android:layout_toEndOf="@+id/playerCharacter" />
     </RadioGroup>
 
     <RadioGroup
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-        android:layout_toStartOf="@+id/enemyCharacter"
+        android:layout_toStartOf="@+id/enemyPortrait"
         android:id="@+id/enemyRadio">
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Head"
-        android:id="@+id/enemyHead"
-        android:onClick="enemyRadio"
-        android:layout_alignTop="@+id/enemyCharacter"
-        android:layout_alignStart="@+id/enemyChest"
-        android:checked="true" />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Head"
+            android:id="@+id/enemyHead"
+            android:onClick="attackRadio"
+            android:layout_alignTop="@+id/enemyPortrait"
+            android:layout_alignStart="@+id/enemyChest"
+            android:checked="true" />
 
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Arm"
-        android:onClick="enemyRadio"
-        android:id="@+id/enemyArm"
-        android:layout_alignTop="@+id/playerArms"
-        android:layout_alignStart="@+id/enemyHead" />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Arm"
+            android:onClick="attackRadio"
+            android:id="@+id/enemyArm"
+            android:layout_alignTop="@+id/playerArms"
+            android:layout_alignStart="@+id/enemyHead" />
 
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Chest"
-        android:id="@+id/enemyChest"
-        android:onClick="enemyRadio"
-        android:layout_alignTop="@+id/playerChest"
-        android:layout_toStartOf="@+id/enemyCharacter" />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chest"
+            android:id="@+id/enemyChest"
+            android:onClick="attackRadio"
+            android:layout_alignTop="@+id/playerChest"
+            android:layout_toStartOf="@+id/enemyPortrait" />
 
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Legs"
-        android:id="@+id/enemyLegs"
-        android:onClick="enemyRadio"
-        android:layout_below="@+id/enemyChest"
-        android:layout_alignStart="@+id/enemyChest" />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Legs"
+            android:id="@+id/enemyLegs"
+            android:onClick="attackRadio"
+            android:layout_below="@+id/enemyChest"
+            android:layout_alignStart="@+id/enemyChest" />
     </RadioGroup>
 
     <Button
@@ -117,7 +117,7 @@
         android:text="Go"
         android:id="@+id/Start"
         android:onClick="buttonStart"
-        android:layout_alignBottom="@+id/enemyCharacter"
+        android:layout_alignBottom="@+id/enemyPortrait"
         android:layout_centerHorizontal="true" />
 
     <ProgressBar
@@ -130,10 +130,10 @@
         android:maxHeight="50dp"
         android:progress="100"
         android:scaleY="8"
-        android:layout_above="@+id/playerCharacter"
+        android:layout_above="@+id/playerPortrait"
         android:layout_alignEnd="@+id/playerRadio"
         android:layout_alignParentStart="true"
-        android:progressTint="#18cf1e" />
+        android:progressTint="#25f40a" />
 
     <ProgressBar
         style="?android:attr/progressBarStyleHorizontal"
@@ -142,7 +142,7 @@
         android:id="@+id/enemyHealthBar"
         android:progress="100"
         android:scaleY="8"
-        android:layout_above="@+id/enemyCharacter"
+        android:layout_above="@+id/enemyPortrait"
         android:layout_alignParentEnd="true"
         android:layout_marginBottom="5dp"
         android:minHeight="50dp"
@@ -176,12 +176,12 @@
         android:id="@+id/enemyHealth"
         android:layout_alignTop="@+id/enemyHealthBar"
         android:layout_alignBottom="@+id/enemyHealthBar"
-        android:layout_alignLeft="@+id/enemyHealthBar"
         android:layout_alignRight="@+id/enemyHealthBar"
         android:gravity="center"
         android:layout_alignParentEnd="true"
         android:textStyle="bold"
-        android:textColor="#000000" />
+        android:textColor="#000000"
+        android:layout_alignStart="@+id/enemyHealthBar" />
 
     <Button
         android:layout_width="wrap_content"
@@ -205,35 +205,22 @@
         android:layout_below="@+id/Menu"
         android:layout_centerHorizontal="true" />
 
-    <FrameLayout
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/enemyHealth"
-        android:layout_alignStart="@+id/newGame"
-        android:layout_alignEnd="@+id/Menu"
-        android:id="@+id/frameLayout"
-        android:layout_above="@+id/Start">
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/scrollLog"
-            android:layout_gravity="center_horizontal|top"
-            android:fillViewport="true"
-            >
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Player"
+        android:id="@+id/playerName"
+        android:layout_above="@+id/playerHealthBar"
+        android:layout_alignParentStart="true" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:visibility="visible"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text=""
-                android:id="@+id/battleLog"
-                android:layout_alignTop="@+id/Menu"
-                android:layout_alignStart="@+id/newGame"
-                android:layout_above="@+id/Start"
-                android:layout_alignEnd="@+id/frameLayout" />
-        </ScrollView>
-
-    </FrameLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Enemy"
+        android:id="@+id/enemyName"
+        android:layout_above="@+id/enemyHealthBar"
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>
